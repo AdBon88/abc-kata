@@ -6,7 +6,8 @@ namespace abc_kata
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            AbcWordFinder abcWordFinder = new AbcWordFinder();
+            abcWordFinder.Run();
         }
     }
 }

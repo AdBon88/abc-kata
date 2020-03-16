@@ -1,0 +1,10 @@
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/bin/Debug/netcoreapp3.1/abc-kata.deps.json
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/bin/Debug/netcoreapp3.1/abc-kata.runtimeconfig.json
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/bin/Debug/netcoreapp3.1/abc-kata.runtimeconfig.dev.json
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/bin/Debug/netcoreapp3.1/abc-kata.dll
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/bin/Debug/netcoreapp3.1/abc-kata.pdb
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/obj/Debug/netcoreapp3.1/abc-kata.csprojAssemblyReference.cache
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/obj/Debug/netcoreapp3.1/abc-kata.AssemblyInfoInputs.cache
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/obj/Debug/netcoreapp3.1/abc-kata.AssemblyInfo.cs
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/obj/Debug/netcoreapp3.1/abc-kata.dll
+/Users/adam.bonarrigo/Projects/abc-kata/abc-kata/obj/Debug/netcoreapp3.1/abc-kata.pdb
