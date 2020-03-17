@@ -42,25 +42,17 @@ namespace abc_kata {
 
         public bool FindWord(List<Block> blocks, String word) {
 
-            bool charsFound = false;
+            bool allCharsFound = false;
 
             for (int i = 0; i < word.Length; i++) {
 
-                foreach (Block block in blocks) {
-                    if (block.Side1 == word[i] || block.Side2 == word[i]) {
-                        charsFound = true;
-                        blocks.Remove(block);
-                        break;
-                    }
-                    else
-                        charsFound = false;
-                    }
+                allCharsFound = CharacterMatchesBlock(blocks, word[i]);
 
-                if (!charsFound)
+                if (!allCharsFound)
                     break;
             }
 
-            if (charsFound)
+            if (allCharsFound)
                 return true;
             else
                 return false;
@@ -72,10 +64,7 @@ namespace abc_kata {
                 if (block.Side1 == currentCharacter || block.Side2 == currentCharacter) {
                     blocks.Remove(block);
                     return true;
-
                 }
-                else
-                    return false;
             }
             return false;
         }
