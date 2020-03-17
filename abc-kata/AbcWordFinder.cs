@@ -7,9 +7,9 @@ namespace abc_kata {
         
 
         public void Run() {
-            List<Block> blocks = new List<Block>();
-            blocks = CreateBlocks();
-            FindWord(blocks, "A");
+            List<Block> blocks = CreateBlocks(); 
+           
+            FindWord(blocks, "COMMON");
         }
 
         public List<Block> CreateBlocks() {
@@ -41,13 +41,45 @@ namespace abc_kata {
         }
 
         public bool FindWord(List<Block> blocks, String word) {
-            
+
+            bool charsFound = false;
+
+            for (int i = 0; i < word.Length; i++) {
+
+                foreach (Block block in blocks) {
+                    if (block.Side1 == word[i] || block.Side2 == word[i]) {
+                        charsFound = true;
+                        blocks.Remove(block);
+                        break;
+                    }
+                    else
+                        charsFound = false;
+                    }
+
+                if (!charsFound)
+                    break;
+            }
+
+            if (charsFound)
+                return true;
+            else
+                return false;
+        }
+
+        private bool CharacterMatchesBlock(List<Block> blocks, char currentCharacter) {
+
             foreach (Block block in blocks) {
-                if(block.Side1 == word[0]) {
+                if (block.Side1 == currentCharacter || block.Side2 == currentCharacter) {
+                    blocks.Remove(block);
                     return true;
+
                 }
+                else
+                    return false;
             }
             return false;
         }
+        
     }
+
 }

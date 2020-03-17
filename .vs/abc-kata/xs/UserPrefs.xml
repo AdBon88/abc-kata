@@ -1,19 +1,37 @@
 ﻿<Properties StartupConfiguration="{7B5438F6-2490-4733-92B9-EE5D77B5419E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="abc-kata/EmptyClass.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="abc-kata/AbcWordFinder.cs">
     <Files>
-      <File FileName="abc-kata/AbcWordFinder.cs" Line="35" Column="44" />
-      <File FileName="abc-kata/Program.cs" Line="14" Column="1" />
-      <File FileName="abc-kata-test/AbcWordFinderTests.cs" Line="13" Column="10" />
-      <File FileName="abc-kata/EmptyClass.cs" Line="4" Column="25" />
+      <File FileName="abc-kata-test/AbcWordFinderTests.cs" Line="18" Column="46" />
+      <File FileName="abc-kata/Block.cs" Line="6" Column="23" />
+      <File FileName="abc-kata-test/BlockCollectionFixture.cs" Line="20" Column="36" />
+      <File FileName="abc-kata/AbcWordFinder.cs" Line="1" Column="1" />
+      <File FileName="abc-kata/Program.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="abc-kata" expanded="True">
             <Node name="abc-kata" expanded="True">
-              <Node name="EmptyClass.cs" selected="True" />
+              <Node name="AbcWordFinder.cs" selected="True" />
             </Node>
             <Node name="abc-kata-test" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>charsFound</Value>
+          <Value>word</Value>
+          <Value>i</Value>
+          <Value>word[i]</Value>
+          <Value>block.Side1</Value>
+          <Value>block.Side2</Value>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="abc-kata" expanded="True">
+            <Node name="abc-kata-test" selected="True" />
           </Node>
         </State>
       </Pad>
