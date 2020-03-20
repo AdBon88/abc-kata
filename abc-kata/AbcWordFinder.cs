@@ -1,15 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace abc_kata {
     public class AbcWordFinder {
 
-        
 
         public void Run() {
-            List<Block> blocks = CreateBlocks(); 
-           
-            FindWord(blocks, "COMMON");
+            List<Block> blocks = CreateBlocks();
+
+            Regex userInput Regex = GetUserInput(Regex(@"[A-Za-z/]")
+            string userInput = GetUserInput(new Regex(@"[A-Za-z/]");
+
+            while (userInput != "/Q") {
+                Console.WriteLine($"\nCan_make_word(\"{userInput}\")");
+                Console.WriteLine($"{WordFound(userInput, blocks)}\n");
+                userInput = GetUserInput();
+            }
+
+            Environment.Exit(0);
         }
 
         public List<Block> CreateBlocks() {
@@ -40,28 +49,44 @@ namespace abc_kata {
             return blocks;
         }
 
-        public bool FindWord(List<Block> blocks, String word) {
+        public string GetUserInput(Regex validInputRegex) {
+            Console.WriteLine("Enter a word to search for, or /Q to quit:");
 
-            bool allCharsFound = false;
+            
 
-            for (int i = 0; i < word.Length; i++) {
+            string userInput = "";
+            bool validInput = false;
 
-                allCharsFound = CharacterMatchesBlock(blocks, word[i]);
-
-                if (!allCharsFound)
-                    break;
+            while (!validInput) {
+                userInput = Console.ReadLine().ToUpper();
+                validInput = IsInputValid(userInput, validInputRegex);
+                if (!validInput)
+                    Console.WriteLine("Please enter alphabetic characters only, or /Q to quit");
             }
 
-            if (allCharsFound)
-                return true;
-            else
-                return false;
+            return userInput;
         }
 
-        private bool CharacterMatchesBlock(List<Block> blocks, char currentCharacter) {
+        public bool IsInputValid(string userInput, Regex validInputRegex) {
+
+            Match regexMatch;
+            regexMatch = validInputRegex.Match(userInput);
+            return regexMatch.Success;
+        }
+
+        public bool WordFound(string word, List<Block> blocks) {
+
+            foreach (char letter in word) {
+                if (!LetterFoundInBlockCollection(letter, blocks))
+                    return false;
+            }
+            return true;
+        }
+
+        private bool LetterFoundInBlockCollection(char currentLetter, List<Block> blocks) {
 
             foreach (Block block in blocks) {
-                if (block.Side1 == currentCharacter || block.Side2 == currentCharacter) {
+                if (block.Side1 == currentLetter || block.Side2 == currentLetter) {
                     blocks.Remove(block);
                     return true;
                 }

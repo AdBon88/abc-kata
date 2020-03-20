@@ -8,89 +8,94 @@ namespace abc_kata
     public class AbcWordFinderTests
     {        readonly List<Block> blocks = new BlockCollectionFixture().CreateBlocks();
 
-
-
         [Fact]
-        public void CreateBlocks_blocks_OutputsTrue(){
+        public void CreateBlocks_CollectionCountMatchesFixtureCount_OutputsTrue(){
 
             List<Block> actual = new AbcWordFinder().CreateBlocks();
-            Assert.True(Enumerable.SequenceEqual(actual, blocks));
+            Assert.True(actual.Count == blocks.Count());
         }
 
         [Fact]
-        public void FindWord_AA_OutputsTrue() {
+        public void GetUserInput_allowsAlphaCharsOrForwardSlash() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "AA");
+            string actual = new AbcWordFinder().GetUserInput();
+            Assert.True(actual.Count == blocks.Count());
+        }
+
+        [Fact]
+        public void WordFound_AA_OutputsTrue() {
+
+            bool actual = new AbcWordFinder().WordFound("AA", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_AAA_OutputsFalse() {
+        public void WordFound_AAA_OutputsFalse() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "AAA");
+            bool actual = new AbcWordFinder().WordFound("AAA", blocks);
             Assert.False(actual);
         }
 
         [Fact]
-        public void FindWord_AAAA_OutputsFalse() {
+        public void WordFound_AAAA_OutputsFalse() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "AAAA");
+            bool actual = new AbcWordFinder().WordFound("AAAA", blocks);
             Assert.False(actual);
         }
 
         [Fact]
-        public void FindWord_BA_OutputsTrue() {
+        public void WordFound_BA_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "BA");
+            bool actual = new AbcWordFinder().WordFound("BA", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_BAR_OutputsTrue() {
+        public void WordFound_BAR_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "BAR");
+            bool actual = new AbcWordFinder().WordFound("BAR", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_BARK_OutputsTrue() {
+        public void WordFound_BARK_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "BARK");
+            bool actual = new AbcWordFinder().WordFound("BARK", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_BOOK_OutputsFalse() {
+        public void WordFound_BOOK_OutputsFalse() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "BOOK");
+            bool actual = new AbcWordFinder().WordFound("BOOK", blocks);
             Assert.False(actual);
         }
 
         [Fact]
-        public void FindWord_TREAT_OutputsTrue() {
+        public void WordFound_TREAT_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "TREAT");
+            bool actual = new AbcWordFinder().WordFound("TREAT", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_COMMON_OutputsFalse() {
+        public void WordFound_COMMON_OutputsFalse() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "COMMON");
+            bool actual = new AbcWordFinder().WordFound("COMMON", blocks);
             Assert.False(actual);
         }
 
         [Fact]
-        public void FindWord_SQUAD_OutputsTrue() {
+        public void WordFound_SQUAD_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "SQUAD");
+            bool actual = new AbcWordFinder().WordFound("SQUAD", blocks);
             Assert.True(actual);
         }
 
         [Fact]
-        public void FindWord_CONFUSE_OutputsTrue() {
+        public void WordFound_CONFUSE_OutputsTrue() {
 
-            bool actual = new AbcWordFinder().FindWord(blocks, "CONFUSE");
+            bool actual = new AbcWordFinder().WordFound("CONFUSE", blocks);
             Assert.True(actual);
         }
 
